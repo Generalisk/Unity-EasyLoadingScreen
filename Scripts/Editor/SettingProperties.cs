@@ -13,7 +13,7 @@ namespace Generalisk.LoadingScreen.Editor
 
             if (canvas.objectReferenceValue == null)
             {
-                EditorGUILayout.HelpBox("No canvas provided! Unity will use Simple Loading Screen's built-in canvas.", MessageType.Info);
+                EditorGUILayout.HelpBox("No canvas provided! Simple Loading Screen will default to it's built-in canvas.", MessageType.Info);
             }
 
             // Save Modified Properties
