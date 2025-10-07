@@ -1,0 +1,11 @@
+{
+  "name": "Generalisk.LoadingScreen.Editor",
+  "rootNamespace": "Generalisk.LoadingScreen.Editor",
+  "references": [
+    "Generalisk.LoadingScreen"
+  ],
+  "excludePlatforms": [],
+  "includePlatforms": [
+    "Editor"
+  ]
+}

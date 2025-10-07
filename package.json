@@ -1,0 +1,18 @@
+{
+  "name": "com.generalisk.loadingscreen",
+  "version": "1.0.0-pre",
+  "displayName": "Simple Loading Screen",
+  "author": {
+    "name": "Generalisk",
+    "url": "https://generalisk.com/",
+    "email": "contact@generalisk.com"
+  },
+  "unity": "2018.3",
+  "hideInEditor": false,
+  "dependencies": {
+    "com.unity.ugui": "2.0.0"
+  },
+  "license": "LICENSE",
+  "licensesUrl": "https://github.com/Generalisk/Unity-LoadingScreen/tree/main/LICENSE",
+  "changelogUrl": "https://github.com/Generalisk/Unity-LoadingScreen/releases"
+}
