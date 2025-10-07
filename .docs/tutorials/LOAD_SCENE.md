@@ -3,7 +3,7 @@
   # Loading A scene
 </div>
 
-To load A scene using Simple Loading Screen, use the `SceneLoader.Load()` function & provide it with either one of the following:
+To load A scene using Easy Loading Screen, use the `SceneLoader.Load()` function & provide it with either one of the following:
 - A [scene](https://docs.unity3d.com/ScriptReference/SceneManagement.Scene.html) object
 - The name of the scene
 - The scenes build index (which you can find in the projects build settings)

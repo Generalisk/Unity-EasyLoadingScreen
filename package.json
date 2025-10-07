@@ -1,7 +1,7 @@
 {
   "name": "com.generalisk.loadingscreen",
   "version": "1.0.0",
-  "displayName": "Simple Loading Screen",
+  "displayName": "Easy Loading Screen",
   "author": {
     "name": "Generalisk",
     "url": "https://generalisk.com/",
@@ -12,7 +12,7 @@
     "com.unity.ugui": "2.0.0"
   },
   "license": "LICENSE",
-  "licensesUrl": "https://github.com/Generalisk/Unity-SimpleLoadingScreen/tree/main/LICENSE",
-  "changelogUrl": "https://github.com/Generalisk/Unity-SimpleLoadingScreen/releases",
-  "description": "Simple Loading Screen is A Unity Package that allows you to easily transition between 2 scenes via A loading screen. Simple Loading Screen allows you to use A custom canvas for the loading screen or opt to use the packages built-in canvas."
+  "licensesUrl": "https://github.com/Generalisk/Unity-EasyLoadingScreen/tree/main/LICENSE",
+  "changelogUrl": "https://github.com/Generalisk/Unity-EasyLoadingScreen/releases",
+  "description": "Easy Loading Screen is A Unity Package that allows you to easily transition between 2 scenes via A loading screen. Easy Loading Screen allows you to use A custom canvas for the loading screen or opt to use the packages built-in canvas."
 }
