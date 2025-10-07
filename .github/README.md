@@ -12,11 +12,4 @@ Simple Loading Screen is A Unity Package that allows you to easily transition be
 - Custom Canvas'
 - Built-in Canvas
 
-## Planned Features
-- Asset Bundle/Addressable support
-- Customizable backgrounds for the built-in canvas
-- Customizable tips for the built-in canvas
-- Networking support
-- Additional loads (scenes, prefabs etc.)
-
 ## [Documentation](../.docs/README.md)
