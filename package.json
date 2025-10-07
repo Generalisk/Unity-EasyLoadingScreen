@@ -14,5 +14,6 @@
   },
   "license": "LICENSE",
   "licensesUrl": "https://github.com/Generalisk/Unity-LoadingScreen/tree/main/LICENSE",
-  "changelogUrl": "https://github.com/Generalisk/Unity-LoadingScreen/releases"
+  "changelogUrl": "https://github.com/Generalisk/Unity-LoadingScreen/releases",
+  "description": "Simple Loading Screen is A Unity Package that allows you to easily transition between 2 scenes via A loading screen. Simple Loading Screen allows you to use A custom canvas for the loading screen or opt to use the packages built-in canvas."
 }
