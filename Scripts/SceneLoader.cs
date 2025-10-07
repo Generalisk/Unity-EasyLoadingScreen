@@ -58,6 +58,13 @@ namespace Generalisk.LoadingScreen
             var scene = SceneManager.CreateScene("LoadingScreen");
             SceneManager.SetActiveScene(scene);
 
+            // Create Camera
+            // this is to fix the screen not refreshing properly
+            var cameraObj = new GameObject("Main Camera");
+            var camera = cameraObj.AddComponent<Camera>();
+            camera.clearFlags = CameraClearFlags.SolidColor;
+            camera.backgroundColor = Color.black;
+
             // Create Manager Object
             var obj = new GameObject("Manager");
             obj.AddComponent<LoadingScreenManager>();
