@@ -5,7 +5,7 @@ namespace Generalisk.LoadingScreen.Editor
 {
     class ProjectSettings : SettingsProvider
     {
-        internal const string PATH = "Project/Generalisk/Loading Screen";
+        internal const string PATH = "Project/Loading Screen";
 
         private SerializedObject settings;
 
