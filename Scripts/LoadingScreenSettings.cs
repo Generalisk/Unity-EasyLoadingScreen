@@ -16,7 +16,7 @@ namespace Generalisk.LoadingScreen
 
 #if UNITY_EDITOR
         internal const string ID = SceneLoader.PACKAGE_ID;
-        internal const string DEFAULT_PATH = "Packages/" + SceneLoader.PACKAGE_ID + "/Settings.asset";
+        internal const string DEFAULT_PATH = "Assets/Settings/LoadingScreen.asset";
 
         [InitializeOnLoadMethod]
         private static void Init()
