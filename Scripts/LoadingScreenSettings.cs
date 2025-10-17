@@ -1,3 +1,4 @@
+using System.IO;
 using System.Linq;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -25,6 +26,9 @@ namespace Generalisk.LoadingScreen
             if (!EditorBuildSettings.TryGetConfigObject(ID, out dictionary))
             {
                 dictionary = CreateInstance<LoadingScreenSettings>();
+
+                if (!Directory.Exists(DEFAULT_PATH + "/../"))
+                { Directory.CreateDirectory(DEFAULT_PATH + "/../"); }
 
                 AssetDatabase.CreateAsset(dictionary, DEFAULT_PATH);
                 EditorBuildSettings.AddConfigObject(ID, dictionary, true);
