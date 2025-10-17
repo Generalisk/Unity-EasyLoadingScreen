@@ -11,5 +11,3 @@ Easy Loading Screen is A Unity Package that allows you to easily transition betw
 ## Features
 - Custom Canvas'
 - Built-in Canvas
-
-## [Documentation](../.docs/README.md)
