@@ -1,4 +1,3 @@
-using System.IO;
 using System.Linq;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -7,26 +6,23 @@ using UnityEngine;
 
 namespace Generalisk.LoadingScreen
 {
-    public class LoadingScreenSettings : ScriptableObject
+    public class LoadingScreenSettingsInternal : ScriptableObject
     {
-        public Canvas canvas;
+        public Canvas defaultCanvas;
 
-        public static LoadingScreenSettings Instance { get; private set; } = null;
+        public static LoadingScreenSettingsInternal Instance { get; private set; } = null;
 
 #if UNITY_EDITOR
-        internal const string ID = SceneLoader.PACKAGE_ID;
-        internal const string DEFAULT_PATH = "Assets/Settings/LoadingScreen.asset";
+        internal const string ID = SceneLoader.PACKAGE_ID + ".internal";
+        internal const string DEFAULT_PATH = "Packages/" + SceneLoader.PACKAGE_ID + "/Settings.asset";
 
         [InitializeOnLoadMethod]
         private static void Init()
         {
-            LoadingScreenSettings dictionary = null;
+            LoadingScreenSettingsInternal dictionary = null;
             if (!EditorBuildSettings.TryGetConfigObject(ID, out dictionary))
             {
-                dictionary = CreateInstance<LoadingScreenSettings>();
-
-                if (!Directory.Exists(DEFAULT_PATH + "/../"))
-                { Directory.CreateDirectory(DEFAULT_PATH + "/../"); }
+                dictionary = CreateInstance<LoadingScreenSettingsInternal>();
 
                 AssetDatabase.CreateAsset(dictionary, DEFAULT_PATH);
                 EditorBuildSettings.AddConfigObject(ID, dictionary, true);

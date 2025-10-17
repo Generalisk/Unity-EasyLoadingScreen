@@ -16,11 +16,6 @@ namespace Generalisk.LoadingScreen.Editor
             EditorGUILayout.Space(15);
             SettingProperties.Draw(serializedObject);
 
-            // Draw Internal Properties
-            EditorGUILayout.Space(5);
-            EditorGUILayout.LabelField(new GUIContent("Internal Properties"), EditorStyles.boldLabel);
-            EditorGUILayout.PropertyField(serializedObject.FindProperty("defaultCanvas"), new GUIContent("Default Canvas"));
-
             // Save Modified Properties
             serializedObject.ApplyModifiedProperties();
         }

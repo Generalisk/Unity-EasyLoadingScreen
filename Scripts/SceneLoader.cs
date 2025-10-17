@@ -53,6 +53,7 @@ namespace Generalisk.LoadingScreen
         {
             Scene currentScene = SceneManager.GetActiveScene();
             var settings = LoadingScreenSettings.Instance;
+            var settingsInternal = LoadingScreenSettingsInternal.Instance;
 
             // Create Scene
             var scene = SceneManager.CreateScene("LoadingScreen");
@@ -70,9 +71,8 @@ namespace Generalisk.LoadingScreen
             obj.AddComponent<LoadingScreenManager>();
 
             // Load Canvas
-            if (settings.canvas != null)
-            { Object.Instantiate(settings.canvas); }
-            else { Object.Instantiate(settings.defaultCanvas); }
+            if (settings.canvas != null) { Object.Instantiate(settings.canvas); }
+            else { Object.Instantiate(settingsInternal.defaultCanvas); }
 
             // Finish up
             SceneManager.SetActiveScene(currentScene);
