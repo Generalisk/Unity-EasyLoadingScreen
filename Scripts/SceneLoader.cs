@@ -11,6 +11,7 @@ namespace Generalisk.LoadingScreen
         /// Loads A scene and displays A loading screen
         /// </summary>
         /// <param name="scene">The scene instance to load</param>
+        [System.Obsolete]
         public static void Load(Scene scene)
         {
             // Create Loading Info Object
@@ -21,6 +22,54 @@ namespace Generalisk.LoadingScreen
             info.deleteObject = true;
             info.Scene = scene;
 
+            // Open & Run Loading Screen
+            RunLoadingScreen();
+        }
+
+        /// <summary>
+        /// Loads A scene and displays A loading screen
+        /// </summary>
+        /// <param name="sceneIndex">The build index of the scene you want the load</param>
+        public static void Load(int sceneIndex)
+        {
+            // Create Loading Info Object
+            var obj = new GameObject("Loading Info");
+            Object.DontDestroyOnLoad(obj);
+
+            var info = obj.AddComponent<LoadingInfo>();
+            info.deleteObject = true;
+            info.SceneIndex = sceneIndex;
+
+            // Open & Run Loading Screen
+            RunLoadingScreen();
+        }
+
+        /// <summary>
+        /// Loads A scene and displays A loading screen
+        /// </summary>
+        /// <param name="sceneName">The name of the scene you want to load</param>
+        public static void Load(string sceneName)
+        {
+            // Create Loading Info Object
+            var obj = new GameObject("Loading Info");
+            Object.DontDestroyOnLoad(obj);
+
+            var info = obj.AddComponent<LoadingInfo>();
+            info.deleteObject = true;
+            info.SceneName = sceneName;
+
+            // Open & Run Loading Screen
+            RunLoadingScreen();
+        }
+
+        /// <summary>
+        /// Opens & Runs the main Loading Screen sequence
+        /// (this it so that the code wouldn't have to be copied across multiple functions)
+        /// 
+        /// This is assuming that you have already generated A `LoadingInfo` instance
+        /// </summary>
+        private static void RunLoadingScreen()
+        {
             // Generate & Open Loading Screen Scene
             var currentScene = SceneManager.GetActiveScene();
             var loadingScreen = GenerateLoadingScene();
@@ -30,20 +79,6 @@ namespace Generalisk.LoadingScreen
             // Run Load
             Object.FindFirstObjectByType<LoadingScreenManager>().Load();
         }
-
-        /// <summary>
-        /// Loads A scene and displays A loading screen
-        /// </summary>
-        /// <param name="sceneIndex">The build index of the scene you want the load</param>
-        public static void Load(int sceneIndex) =>
-            Load(SceneManager.GetSceneByBuildIndex(sceneIndex));
-
-        /// <summary>
-        /// Loads A scene and displays A loading screen
-        /// </summary>
-        /// <param name="sceneName">The name of the scene you want to load</param>
-        public static void Load(string sceneName) =>
-            Load(SceneManager.GetSceneByName(sceneName));
 
         /// <summary>
         /// Generates the loading screen scene

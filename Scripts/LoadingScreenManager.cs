@@ -14,7 +14,13 @@ namespace Generalisk.LoadingScreen
 
             DontDestroyOnLoad(this);
 
-            var operation = SceneManager.LoadSceneAsync(info.Scene.name);
+            AsyncOperation operation;
+
+            if (info.SceneIndex != -1)
+            { operation = SceneManager.LoadSceneAsync(info.SceneIndex); }
+            else if (info.SceneName != string.Empty)
+            { operation = SceneManager.LoadSceneAsync(info.SceneName); }
+            else { operation = SceneManager.LoadSceneAsync(info.Scene.name); }
 
             while (!operation.isDone)
             {

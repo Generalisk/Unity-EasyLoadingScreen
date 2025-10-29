@@ -7,8 +7,10 @@ namespace Generalisk.LoadingScreen
     {
         internal bool deleteObject = false;
 
-        public Scene Scene { get; internal set; }
-
         public float Progress { get; internal set; } = 0;
+
+        [System.Obsolete] public Scene Scene { get; internal set; }
+        public string SceneName { get; internal set; } = string.Empty;
+        public int SceneIndex { get; internal set; } = -1;
     }
 }
