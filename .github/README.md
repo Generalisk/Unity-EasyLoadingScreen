@@ -26,3 +26,5 @@ https://github.com/Generalisk/Unity-EasyLoadingScreen.git
 ```
 ### Install via OpenUPM
 Go to the Packages [OpenUPM page](https://openupm.com/packages/com.generalisk.loadingscreen) and follow the installation instructions provided.
+
+## [DOCUMENTATION](../Documentation~/)
