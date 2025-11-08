@@ -17,30 +17,32 @@ namespace Generalisk.LoadingScreen
         internal const string DEFAULT_PATH = "Packages/" + SceneLoader.PACKAGE_ID + "/Settings.asset";
 
         [InitializeOnLoadMethod]
-        private static void Init()
+        public static LoadingScreenSettingsInternal Get()
         {
-            LoadingScreenSettingsInternal dictionary = null;
-            if (!EditorBuildSettings.TryGetConfigObject(ID, out dictionary))
+            LoadingScreenSettingsInternal settings = null;
+            if (!EditorBuildSettings.TryGetConfigObject(ID, out settings))
             {
                 if (AssetDatabase.AssetPathExists(DEFAULT_PATH) &&
                     AssetDatabase.GetMainAssetTypeAtPath(DEFAULT_PATH) == typeof(LoadingScreenSettingsInternal))
                 {
-                    dictionary = AssetDatabase.LoadAssetAtPath<LoadingScreenSettingsInternal>(DEFAULT_PATH);
+                    settings = AssetDatabase.LoadAssetAtPath<LoadingScreenSettingsInternal>(DEFAULT_PATH);
                 }
                 else
                 {
-                    dictionary = CreateInstance<LoadingScreenSettingsInternal>();
-                    AssetDatabase.CreateAsset(dictionary, DEFAULT_PATH);
+                    settings = CreateInstance<LoadingScreenSettingsInternal>();
+                    AssetDatabase.CreateAsset(settings, DEFAULT_PATH);
                 }
-                EditorBuildSettings.AddConfigObject(ID, dictionary, true);
+                EditorBuildSettings.AddConfigObject(ID, settings, true);
             }
 
             var preload = PlayerSettings.GetPreloadedAssets().ToList();
-            if (!preload.Contains(dictionary))
+            if (!preload.Contains(settings))
             {
-                preload.Add(dictionary);
+                preload.Add(settings);
                 PlayerSettings.SetPreloadedAssets(preload.ToArray());
             }
+
+            return settings;
         }
 #endif
 
