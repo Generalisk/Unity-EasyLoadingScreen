@@ -6,7 +6,7 @@
   # Easy Loading Screen
 </div>
 
-Easy Loading Screen is A Unity Package that allows you to easily transition between 2 scenes via A loading screen. Easy Loading Screen allows you to use A custom canvas for the loading screen or opt to use the packages built-in canvas.
+Easy Loading Screen is a Unity Package that allows you to easily transition between 2 scenes via a loading screen. Easy Loading Screen allows you to use a custom canvas for the loading screen or opt to use the packages built-in canvas.
 
 ## FEATURES
 - Custom Canvas'

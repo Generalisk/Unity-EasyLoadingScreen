@@ -8,7 +8,7 @@ namespace Generalisk.LoadingScreen
         internal const string PACKAGE_ID = "com.generalisk.loadingscreen";
 
         /// <summary>
-        /// Loads A scene and displays A loading screen
+        /// Loads a scene and displays a loading screen
         /// </summary>
         /// <param name="scene">The scene instance to load</param>
         [System.Obsolete]
@@ -27,7 +27,7 @@ namespace Generalisk.LoadingScreen
         }
 
         /// <summary>
-        /// Loads A scene and displays A loading screen
+        /// Loads a scene and displays a loading screen
         /// </summary>
         /// <param name="sceneIndex">The build index of the scene you want the load</param>
         public static void Load(int sceneIndex)
@@ -45,7 +45,7 @@ namespace Generalisk.LoadingScreen
         }
 
         /// <summary>
-        /// Loads A scene and displays A loading screen
+        /// Loads a scene and displays a loading screen
         /// </summary>
         /// <param name="sceneName">The name of the scene you want to load</param>
         public static void Load(string sceneName)
@@ -66,7 +66,7 @@ namespace Generalisk.LoadingScreen
         /// Opens & Runs the main Loading Screen sequence
         /// (this it so that the code wouldn't have to be copied across multiple functions)
         /// 
-        /// This is assuming that you have already generated A `LoadingInfo` instance
+        /// This is assuming that you have already generated a `LoadingInfo` instance
         /// </summary>
         private static void RunLoadingScreen()
         {

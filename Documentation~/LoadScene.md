@@ -3,7 +3,7 @@
   # Load Scene
 </div>
 
-To load A scene through A loading screen, all you need to do is use the `SceneLoader.Load()` function from the `Generalisk.LoadingScreen` namespace.
+To load a scene through a loading screen, all you need to do is use the `SceneLoader.Load()` function from the `Generalisk.LoadingScreen` namespace.
 
 This function accepts one of two values:
 - The scenes name, which corresponds to the scenes file name (minus the .unity extension).

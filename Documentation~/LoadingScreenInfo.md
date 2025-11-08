@@ -3,7 +3,7 @@
   # Loading Screen Info
 </div>
 
-The Loading Screen info is stored in A `LoadingInfo` component. It is generated just before the Loading Screen is opened and is destroyed just before the Loading Screen closes.
+The Loading Screen info is stored in a `LoadingInfo` component. It is generated just before the Loading Screen is opened and is destroyed just before the Loading Screen closes.
 
 The `LoadingInfo` component contains Loading instructions & Load Progress (ranged from 0-1).
 
