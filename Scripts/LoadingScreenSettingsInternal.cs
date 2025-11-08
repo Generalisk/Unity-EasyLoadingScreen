@@ -10,12 +10,21 @@ namespace Generalisk.LoadingScreen
     {
         public Canvas defaultCanvas;
 
+        /// <summary>
+        /// (Runtime only! Use the Get() function for editor scripts)
+        /// </summary>
         public static LoadingScreenSettingsInternal Instance { get; private set; } = null;
 
 #if UNITY_EDITOR
         internal const string ID = SceneLoader.PACKAGE_ID + ".internal";
         internal const string DEFAULT_PATH = "Packages/" + SceneLoader.PACKAGE_ID + "/Settings.asset";
 
+        /// <summary>
+        /// Gets the settings instance, or generates a new one if it could not be found
+        /// 
+        /// (Editor only! Use the Instance property for runtime scripts)
+        /// </summary>
+        /// <returns>The settings instance</returns>
         [InitializeOnLoadMethod]
         public static LoadingScreenSettingsInternal Get()
         {
