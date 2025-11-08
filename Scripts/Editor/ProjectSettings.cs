@@ -20,7 +20,7 @@ namespace Generalisk.LoadingScreen.Editor
         }
 
         public override void OnActivate(string searchContext, VisualElement rootElement)
-            => settings = new SerializedObject(LoadingScreenSettings.Instance);
+            => settings = new SerializedObject(LoadingScreenSettings.Get());
 
         public override void OnGUI(string searchContext)
         {
