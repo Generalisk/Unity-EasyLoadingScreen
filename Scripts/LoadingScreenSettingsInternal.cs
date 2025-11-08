@@ -22,9 +22,16 @@ namespace Generalisk.LoadingScreen
             LoadingScreenSettingsInternal dictionary = null;
             if (!EditorBuildSettings.TryGetConfigObject(ID, out dictionary))
             {
-                dictionary = CreateInstance<LoadingScreenSettingsInternal>();
-
-                AssetDatabase.CreateAsset(dictionary, DEFAULT_PATH);
+                if (AssetDatabase.AssetPathExists(DEFAULT_PATH) &&
+                    AssetDatabase.GetMainAssetTypeAtPath(DEFAULT_PATH) == typeof(LoadingScreenSettingsInternal))
+                {
+                    dictionary = AssetDatabase.LoadAssetAtPath<LoadingScreenSettingsInternal>(DEFAULT_PATH);
+                }
+                else
+                {
+                    dictionary = CreateInstance<LoadingScreenSettingsInternal>();
+                    AssetDatabase.CreateAsset(dictionary, DEFAULT_PATH);
+                }
                 EditorBuildSettings.AddConfigObject(ID, dictionary, true);
             }
 

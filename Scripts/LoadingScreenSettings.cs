@@ -23,12 +23,20 @@ namespace Generalisk.LoadingScreen
             LoadingScreenSettings dictionary = null;
             if (!EditorBuildSettings.TryGetConfigObject(ID, out dictionary))
             {
-                dictionary = CreateInstance<LoadingScreenSettings>();
+                if (AssetDatabase.AssetPathExists(DEFAULT_PATH) &&
+                    AssetDatabase.GetMainAssetTypeAtPath(DEFAULT_PATH) == typeof(LoadingScreenSettings))
+                {
+                    dictionary = AssetDatabase.LoadAssetAtPath<LoadingScreenSettings>(DEFAULT_PATH);
+                }
+                else
+                {
+                    dictionary = CreateInstance<LoadingScreenSettings>();
 
-                if (!Directory.Exists(DEFAULT_PATH + "/../"))
-                { Directory.CreateDirectory(DEFAULT_PATH + "/../"); }
+                    if (!Directory.Exists(DEFAULT_PATH + "/../"))
+                    { Directory.CreateDirectory(DEFAULT_PATH + "/../"); }
 
-                AssetDatabase.CreateAsset(dictionary, DEFAULT_PATH);
+                    AssetDatabase.CreateAsset(dictionary, DEFAULT_PATH);
+                }
                 EditorBuildSettings.AddConfigObject(ID, dictionary, true);
             }
 
