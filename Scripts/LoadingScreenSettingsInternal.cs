@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Generalisk.LoadingScreen
 {
-    public class LoadingScreenSettingsInternal : ScriptableObject
+    internal class LoadingScreenSettingsInternal : ScriptableObject
     {
         public Canvas defaultCanvas;
 
